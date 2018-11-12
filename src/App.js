@@ -29,32 +29,12 @@ class App extends Component {
 				<div className="content">
 					<Switch>
 						{/* Presentational */}
-						<Route
-							path="/car_list_presentational"
-							component={CarListContainer}
-						/>
-						<Route
-							path="/starwars_presentational"
-							component={StarWarsContainer}
-						/>
 
 						{/* HOC */}
-						<Route path="/car_list" component={CarsList} />
-						<Route path="/starwars" component={StarWars} />
 
 						{/* Render Props */}
-						<Route
-							path="/starwars_renderprops"
-							component={StarWarsRender}
-						/>
-						<Route
-							path="/cars_list_renderprops"
-							component={CarListRender}
-						/>
 
 						{/* Children */}
-
-						<Route path="/children_example" component={Parent} />
 					</Switch>
 				</div>
 			</div>
