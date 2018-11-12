@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Route, Switch, Link } from "react-router-dom";
+import Header from "./Header";
 
 //Presentational / Container
 import CarListContainer from "./components/Presentational/CarListContainer";
@@ -21,35 +22,10 @@ import Parent from "./components/Children/Parent";
 import "./App.css";
 
 class App extends Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			id: 3
-		};
-	}
-
-	changer = (val) => {
-		this.setState({
-			id: val
-		});
-	};
-
 	render() {
 		return (
 			<div className="App">
-				<header>
-					{/* Presentational */}
-					<Link to="/car_list_presentational">Cars List(p/c)</Link>
-					<Link to="/starwars_presentational">Star Wars(p/c)</Link>
-
-					{/* HOC */}
-					<Link to="/car_list">Cars List(hoc)</Link>
-					<Link to="/starwars">Star Wars(hoc)</Link>
-
-					{/* Render Props */}
-					<Link to="/cars_list_renderprops">Cars List(render)</Link>
-					<Link to="/starwars_renderprops">Star Wars(render)</Link>
-				</header>
+				<Header />
 				<div className="content">
 					<Switch>
 						{/* Presentational */}
@@ -78,7 +54,7 @@ class App extends Component {
 
 						{/* Children */}
 
-						<Route path="/testpath" component={Parent} />
+						<Route path="/children_example" component={Parent} />
 					</Switch>
 				</div>
 			</div>
