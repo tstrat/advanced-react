@@ -1,0 +1,90 @@
+.App {
+	min-width: 100vw;
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+
+header {
+	height: 100px;
+	background: grey;
+	color: white;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 0 0 20px;
+}
+
+header a {
+	margin: 0 20px;
+	font-size: 24px;
+	color: white;
+	text-decoration: none;
+}
+
+header a:hover {
+	color: rgb(216, 216, 216);
+}
+
+.content {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+}
+
+.carlist-container > div {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	max-width: 1000px;
+}
+
+.car {
+	background: rgb(243, 243, 243);
+	margin: 10px;
+	width: 200px;
+	height: 300px;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+
+.car > div {
+	margin: 10px 0;
+}
+
+.car > h1:nth-child(1) {
+	font-size: 34px;
+}
+
+.car > h2:nth-child(2) {
+	font-size: 24px;
+}
+
+.car img {
+	width: 100%;
+}
+
+.car > div:nth-child(3) {
+	color: green;
+}
+
+.car > div:nth-child(4) {
+}
+
+.star-wars-char {
+	background: rgb(243, 243, 243);
+	margin: 10px;
+	box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.233);
+	display: flex;
+	flex-direction: column;
+}
+
+.user-card-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
