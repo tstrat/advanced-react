@@ -14,6 +14,9 @@ import DataFetcher from "./components/RenderProps/DataFetcher";
 import StarWarsRender from "./components/RenderProps/StarWarsRender";
 import CarListRender from "./components/RenderProps/CarsListRender";
 
+// Children
+import Parent from "./components/Children/Parent";
+
 import "./App.css";
 
 class App extends Component {
@@ -84,6 +87,7 @@ class App extends Component {
 								);
 							}}
 						/>
+						<Route path="/children_example" component={Parent} />
 					</Switch>
 				</div>
 			</div>
