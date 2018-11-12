@@ -1,4 +1,4 @@
-# Advanced React Patterns Day
+# Advanced React Patterns Day **Solution**
 
 ## Presentational / Container Components
 
