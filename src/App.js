@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Route, Switch, Link } from "react-router-dom";
+import Header from "./Header";
 
 //Presentational / Container
 import CarListContainer from "./components/Presentational/CarListContainer";
@@ -23,19 +24,7 @@ class App extends Component {
 	render() {
 		return (
 			<div className="App">
-				<header>
-					{/* Presentational */}
-					<Link to="/car_list_presentational">Cars List(p/c)</Link>
-					<Link to="/starwars_presentational">Star Wars(p/c)</Link>
-
-					{/* HOC */}
-					<Link to="/car_list">Cars List(hoc)</Link>
-					<Link to="/starwars">Star Wars(hoc)</Link>
-
-					{/* Render Props */}
-					<Link to="/cars_list_renderprops">Cars List(render)</Link>
-					<Link to="/starwars_renderprops">Star Wars(render)</Link>
-				</header>
+				<Header />
 				<div className="content">
 					<Switch>
 						{/* Presentational */}
