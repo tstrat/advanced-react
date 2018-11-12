@@ -14,9 +14,26 @@ import DataFetcher from "./components/RenderProps/DataFetcher";
 import StarWarsRender from "./components/RenderProps/StarWarsRender";
 import CarListRender from "./components/RenderProps/CarsListRender";
 
+// Children
+
+import Parent from "./components/Children/Parent";
+
 import "./App.css";
 
 class App extends Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			id: 3
+		};
+	}
+
+	changer = (val) => {
+		this.setState({
+			id: val
+		});
+	};
+
 	render() {
 		return (
 			<div className="App">
@@ -52,38 +69,16 @@ class App extends Component {
 						{/* Render Props */}
 						<Route
 							path="/starwars_renderprops"
-							render={() => {
-								return (
-									<DataFetcher
-										url="https://swapi.co/api/people/1"
-										render={(data) => (
-											<StarWarsRender data={data} />
-										)}
-									/>
-								);
-							}}
+							component={StarWarsRender}
 						/>
 						<Route
 							path="/cars_list_renderprops"
-							render={() => {
-								return (
-									<div>
-										<DataFetcher
-											url="/api/cars_List/1"
-											render={(data) => (
-												<CarListRender data={data} />
-											)}
-										/>
-										<DataFetcher
-											url="/api/cars_List/2"
-											render={(data) => (
-												<CarListRender data={data} />
-											)}
-										/>
-									</div>
-								);
-							}}
+							component={CarListRender}
 						/>
+
+						{/* Children */}
+
+						<Route path="/testpath" component={Parent} />
 					</Switch>
 				</div>
 			</div>
