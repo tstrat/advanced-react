@@ -20,6 +20,7 @@ import CarListRender from "./components/RenderProps/CarsListRender";
 import Parent from "./components/Children/Parent";
 
 import "./App.css";
+import CarsListContainer from "./components/Presentational/CarListContainer";
 
 class App extends Component {
 	render() {
@@ -29,12 +30,43 @@ class App extends Component {
 				<div className="content">
 					<Switch>
 						{/* Presentational */}
-
+							<Route path='/starwars_presentational' component={StarWarsContainer}/>
+							<Route path='/car_list_presentational' component={CarsListContainer}/>
 						{/* HOC */}
-
+							<Route path='/starwars' component={StarWars}/>
+							<Route path='/car_list' component={CarsList}/>
 						{/* Render Props */}
-
+							<Route 
+								path='/starwars_renderprops' 
+								render={() => {
+									return (
+										<>
+											<DataFetcher
+												url={'https://swapi.co/api/people/1/'}
+												render={(data) => {
+													return <StarWarsRender data={data} />
+												}}
+											/>
+										</>
+									)
+								}} />
+							<Route 
+								path='/cars_list_renderprops' 
+								render={() => {
+									return (
+										<div className='car-list-container'>
+											<DataFetcher 
+												url={`/api/cars_list/1`}
+												render={(data) => {
+													return <CarListRender data={data} />
+												}}
+											/>
+										</div>
+									)
+								}} 
+							/>
 						{/* Children */}
+						<Route path='/' component={Parent} />
 					</Switch>
 				</div>
 			</div>
